@@ -1,0 +1,12 @@
+{
+  "Teacher": "create table Teacher(IDintprimarykeyidentity,NatIdvarchar(15)unique,FirstNamenvarchar(MAX),LastNamenvarchar(MAX),Phonevarchar(15),HourlyRateNisintnotnull,);",
+  "Student": "",
+  "Course": "",
+  "Topic":,
+  "TopicInCourse": null,
+  "DaysInWeek": null,
+  "Hours": null,
+  "CourseCycle": null,
+  "TeachTopic": null,
+  "StudentInCourse": null
+}
