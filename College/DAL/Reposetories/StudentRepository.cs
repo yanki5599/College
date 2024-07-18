@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace College.DAL.Reposetories
 {
-    internal class TeachersRepository<TeacherModel> : ABSRepositoryModel<TeacherModel>
+    public class StudentRepository : ABSRepositoryModel<StudentModel>
     {
-        const string TableName = "Teacher";
-        public TeachersRepository() : base(TableName)
+        const string TableName = "Student";
+        public StudentRepository() : base(TableName)
         {
         }
     }

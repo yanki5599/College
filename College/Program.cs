@@ -1,4 +1,5 @@
 using College.DAL;
+using College.Model;
 
 namespace College
 {

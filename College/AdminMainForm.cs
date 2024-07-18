@@ -15,28 +15,47 @@ namespace College
     public partial class AdminMainForm : MiddleForm
     {
         CourseCycleRepository CourseCycleRepository = new CourseCycleRepository();
+        StudentRepository StudentRepository = new StudentRepository();
+        TeacherRepository TeacherRepository = new TeacherRepository();
+        CourseRepository CourseRepository = new CourseRepository();
 
-        public AdminMainForm(FormHandler formHandler): base(formHandler, FormName.AdminMain)
+        public AdminMainForm(FormHandler formHandler) : base(formHandler, FormName.AdminMain)
         {
             InitializeComponent();
+            LoadCoursesCyclesTable();
             LoadCoursesTable();
             LoadTeachers();
             LoadStudents();
         }
 
+        private void LoadCoursesTable()
+        {
+            dataGridView_Courses.DataSource =  CourseRepository.GetAll();
+        }
+
         private void LoadStudents()
         {
-            dataGridView3.DataSource = StudentsRepository.GetAll();
+            dataGridView_students.DataSource = StudentRepository.GetAll();
         }
 
         private void LoadTeachers()
         {
-            dataGridView2.DataSource = TeachersRepository.GetAll();
+            dataGridView_teachers.DataSource = TeacherRepository.GetAll();
         }
 
-        private void LoadCoursesTable()
+        private void LoadCoursesCyclesTable()
         {
-            dataGridView1.DataSource = CourseCycleRepository.GetAll();
+            dataGridView_coursesCycles.DataSource = CourseCycleRepository.GetAll();
+        }
+
+        private void button_addCourseCycle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_addCourse_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

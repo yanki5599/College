@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace College.Model
 {
-    internal class TeacherModel : IModel
+    public class TeacherModel : IModel
     {
         int? ID { get; set; }
         string NatId { get; set; }
@@ -40,10 +40,17 @@ namespace College.Model
             }.ToArray();
         }
 
+        // insure properies names matches sql columns before calling this function
         public string GetColumnNames()
         {
             string columnNames = "";
-            return this.GetType().GetProperties();
+            var i = this.GetType().GetProperties();
+
+            foreach (var prop in i)
+            {
+                columnNames += prop.Name + ',';
+            }
+            return columnNames;
         }
     }
 }

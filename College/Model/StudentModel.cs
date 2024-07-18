@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace College.Model
 {
-    internal class StudentModel : IModel
+    public class StudentModel : IModel
     {
         public StudentModel(int? iD, string natId, string firstName, string lastName, string? phone)
         {
@@ -35,6 +35,18 @@ namespace College.Model
                 new SqlParameter("@lname",SqlDbType.NVarChar){Value = LastName},
                 new SqlParameter("@Phone",SqlDbType.VarChar){Value = Phone},
             }.ToArray();
+        }
+
+        public string GetColumnNames()
+        {
+            string columnNames = "";
+            var i = this.GetType().GetProperties();
+
+            foreach (var prop in i)
+            {
+                columnNames += prop.Name + ',';
+            }
+            return columnNames;
         }
     }
 }
