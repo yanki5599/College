@@ -41,6 +41,7 @@
             Courses = new TabPage();
             dataGridView_Courses = new DataGridView();
             button_addCourse = new Button();
+            textBox1 = new TextBox();
             tabControl1.SuspendLayout();
             coursesCycles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_coursesCycles).BeginInit();
@@ -156,6 +157,7 @@
             // 
             // Courses
             // 
+            Courses.Controls.Add(textBox1);
             Courses.Controls.Add(dataGridView_Courses);
             Courses.Controls.Add(button_addCourse);
             Courses.Location = new Point(4, 24);
@@ -184,6 +186,13 @@
             button_addCourse.UseVisualStyleBackColor = true;
             button_addCourse.Click += button_addCourse_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(537, 57);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(142, 23);
+            textBox1.TabIndex = 4;
+            // 
             // AdminMainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -201,6 +210,7 @@
             students.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView_students).EndInit();
             Courses.ResumeLayout(false);
+            Courses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView_Courses).EndInit();
             ResumeLayout(false);
         }
@@ -220,5 +230,6 @@
         private TabPage Courses;
         private Button button_addCourse;
         private DataGridView dataGridView_Courses;
+        private TextBox textBox1;
     }
 }

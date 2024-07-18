@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using College.Model;
 namespace College
 {
     public partial class AdminMainForm : MiddleForm
@@ -55,7 +55,10 @@ namespace College
 
         private void button_addCourse_Click(object sender, EventArgs e)
         {
-
+            string courseName = textBox1.Text.Trim();
+            if (string.IsNullOrEmpty(courseName)) 
+                CourseRepository.Insert(new CourseModel(null, courseName));
+            LoadCoursesTable();
         }
     }
 }

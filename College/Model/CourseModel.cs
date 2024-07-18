@@ -10,13 +10,13 @@ namespace College.Model
 {
     public class CourseModel : IModel
     {
-        public CourseModel(int iD, string name)
+        public CourseModel(int? iD, string name)
         {
             ID = iD;
             Name = name;
         }
 
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public string Name { get; set; }
 
         public string GetColumnNames()
